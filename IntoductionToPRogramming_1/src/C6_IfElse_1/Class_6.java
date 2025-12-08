@@ -20,6 +20,7 @@ public class Class_6
 			}
 			System.out.println("outside if block");
 		 * outside if block
+		 * Next Phase
 		 * Condition: a >= 10 gives false therefore code inside if block does not gets executed.
 		 * Using multiple if conditions
 		 * int a=18,b=16;
