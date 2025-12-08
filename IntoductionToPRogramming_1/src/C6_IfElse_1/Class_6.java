@@ -10,7 +10,7 @@ public class Class_6
 		 * If else is used in case of boolean conditions where we want to execute a piece of code if a condition is true or false.
 		   The condition should be boolean i.e output of the condition should be either true or false.
 		   For example: Let's say We are making a system for senior citizens wherein a person can get pension if that person is 65 or older otherwise he/she can't. Here the condition is age of the person.
-		 * if (age >= 65);
+		 * if (age >= 65)
 		 * If block :
 		 *         When we only want to do something when condition is true
 		 *  int a = 9;
