@@ -16,7 +16,7 @@ public class Class_6
 		 *  int a = 9;
 			if( a >= 10 )
 			{
-    			System.out.println("inside if block");
+    			System.out.println("inside if b block");
 			}
 			System.out.println("outside if block");
 		 * outside if block
