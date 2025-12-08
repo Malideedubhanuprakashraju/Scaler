@@ -5,7 +5,8 @@ public class Class_6
 
 	public static void main(String[] args) 
 	{
-		/* If-Else : 1
+		/* 
+		 * If-Else : 1
 		 * What is the usecase of if-else?
 		 * If else is used in case of boolean conditions where we want to execute a piece of code if a condition is true or false.
 		   The condition should be boolean i.e output of the condition should be either true or false.
