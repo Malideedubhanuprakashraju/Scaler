@@ -79,6 +79,73 @@ public class Class_9
 	   * 
 	   * 
 	   */
+	   //Q) Given N, Print it's Last Digit
+		int n=243;
+		System.out.println(n%10);
+		RemoveL(n);
+		
+		//Q) Given N, Print All Digits of N in Reverse Order
+		int n1=6397;
+		Reverse(n1);
+		System.out.println();
+		//Q) Given N,Print Count of Digits of N
+		int n2=6397;
+		CountDigits(n2);
+		
+		SumDigits(n2);
+	}
+
+	private static void SumDigits(int n) 
+	{
+		 int sum=0;
+		 
+		 if(n<0)
+		 {
+			 n=n*-1;
+		 }
+		
+		 while(n>0)
+		 {
+			 sum=sum+n%10;
+			 n=n/10;
+		 }
+		 System.out.println(sum);
+	}
+
+	private static void CountDigits(int n) 
+	{
+		 int count=0;
+		 while(n>0)
+		 {
+			 count++;
+			 n=n/10;
+		 }
+		 System.out.println("count-->"+count);
+	}
+
+	private static void Reverse(int n1) 
+	{
+		if(n1==0)
+		{
+			System.out.println(0);
+		}
+		else if(n1<0)
+		{
+			n1=n1*-1;
+		}
+		
+		while(n1>0)
+		{
+		 int d=n1%10;
+		 System.out.print(d+" ");
+		 n1=n1/10;
+		}
+	}
+
+	private static void RemoveL(int n) 
+	{
+		 n=n/10;
+		 System.out.println(n);
 	}
 
 }
