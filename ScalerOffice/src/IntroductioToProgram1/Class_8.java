@@ -112,6 +112,58 @@ public class Class_8
 			Therefore total iterations would be n/3. 
    		  * 
 		  */
+		//Q) Print from N to 1
+		int n=5;
+		Reverse(n);
+		System.out.println();
+		//Q) Given N Print all Multiples 
+		int n1=40;
+		Mutiples(n1);
+		System.out.println();
+		//Q) Print Natural Numbers from 1 to 5
+		printNat(5);
+		System.out.println();
+		//Q) Print Even Numbers From 1 to N
+		evenNo(7);
+		System.out.println();
+	}
+
+	private static void evenNo(int n) //Tc=O(N/2)
+	{
+		for(int i=2;i<=n;i=i+2)
+		{
+			if(i%2==0)
+			{
+				System.out.print(i+" ");
+			}
+		}
+	}
+
+	private static void printNat(int n) //N-iter
+	{
+		 for(int i=1;i<=n;i++)
+		 {
+			 System.out.print(i+" ");
+		 }
+	}
+
+	private static void Mutiples(int n)//Tc=O(N/4)
+	{
+		for(int i=4;i<=n;i=i+4)
+		{
+			if(i%4==0)
+			{
+				System.out.print(i+" ");
+			}
+		}
+	}
+
+	private static void Reverse(int n) //N-iter
+	{
+		for(int i=n;i>=1;i--)
+		{
+			System.out.print(i+" ");
+		}
 	}
 
 }
