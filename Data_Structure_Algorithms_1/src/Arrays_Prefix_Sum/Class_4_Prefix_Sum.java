@@ -147,6 +147,8 @@ public class Class_4_Prefix_Sum
 			System.out.print(x+" ");
 		}
 		
+		// 
+		
 	}
 
 	private static int[] OddIndexRangeSum(int[] ar1, int[][] qr) // T.C= O(N+Q)
@@ -157,7 +159,7 @@ public class Class_4_Prefix_Sum
 		 int psum[]=new int[n];
 		 int sum=0;
 		 for(int i=0;i<n;i++)
-		 {	 if(i%2==1) // Only Even Index Ele
+		 {	 if(i%2==1) // Only Odd Index Ele Sum will Update For even index sum will remain same.
 		     {
 			  sum=sum+ar1[i];
 		     }
@@ -192,7 +194,7 @@ public class Class_4_Prefix_Sum
 		 int psum[]=new int[n];
 		 int sum=0;
 		 for(int i=0;i<n;i++)
-		 {	 if(i%2==0) // Only Even Index Ele
+		 {	 if(i%2==0) // Only Even Index Ele Sum will updated For odd index sum will remain same.
 		     {
 			  sum=sum+ar1[i];
 		     }
