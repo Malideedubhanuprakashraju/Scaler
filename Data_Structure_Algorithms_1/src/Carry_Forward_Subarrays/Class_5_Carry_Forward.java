@@ -134,7 +134,7 @@ public class Class_5_Carry_Forward
 		  * 
 		  * If Array[N] :
 		  * 			Total Subarrays= N+N-1+N-2+....1
-		  * 						   = N*(N-1)/2;
+		  * 						   = N*(N+1)/2;
 		  *  
 		  */
 		 
