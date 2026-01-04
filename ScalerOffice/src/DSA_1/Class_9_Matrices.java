@@ -162,7 +162,7 @@ public class Class_9_Matrices
 	  *  T.C= O(N*M[N+M])= O(N^2M+M^2N)
 	  */
 	 
-	 /* Idea-3 : Optimization Code 
+	 /* Idea-3 : Optimization Code   --- 
 	  * 
 	  * 1) In a Row Even if single 0 is present entire row=0.
 	  * 2) In a Col Even if single 0 is present entire col=0.
