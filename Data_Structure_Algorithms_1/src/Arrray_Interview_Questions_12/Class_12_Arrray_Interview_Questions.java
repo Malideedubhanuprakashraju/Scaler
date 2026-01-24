@@ -98,7 +98,7 @@ public class Class_12_Arrray_Interview_Questions
 		int ans2=MajorityEle(ar2);
 		System.out.println(ans2);
 		
-		/* Optimization 
+		/* Optimization Code
 		 * 
 		 * Note : When we Removed 2 different, things Majority Element Will Remain
 		 * 
