@@ -177,7 +177,7 @@ public class Class_26_Searching_1
 		
 		
 		
-		/* Idea-1 : Iterate on Array, Check Adjacnet Elements & find Unique
+		/* Idea-1 : Iterate on Array, Check Adjacent Elements & find Unique
 		 * 
 		 * T.C = O(N)
 		 * S.C = O(1)
@@ -351,8 +351,8 @@ public class Class_26_Searching_1
 		return ans;
 	}
 
-	private static boolean searchK(int[] ar, int k) 
-	{
+	private static boolean searchK(int[] ar, int k) // T.C = O(log N)
+	{												// S.C = O(1)
 		 int n=ar.length;
 		 int low=0;
 		 int high=n-1;
