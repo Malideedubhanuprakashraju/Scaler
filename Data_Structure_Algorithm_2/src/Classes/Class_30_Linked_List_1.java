@@ -135,8 +135,8 @@ public class Class_30_Linked_List_1
 		 
 	}
 
-	private static Node deleteAllIterative(Node head, int k)
-	{
+	private static Node deleteAllIterative(Node head, int k) // T.C = O(N)
+	{														 // S.C = O(1)
 	    // Remove matching nodes from beginning
 	    while(head != null && head.data == k)
 	    {
