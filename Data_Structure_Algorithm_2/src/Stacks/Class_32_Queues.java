@@ -2,6 +2,8 @@ package Stacks;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Class_32_Queues 
 {
@@ -52,6 +54,14 @@ public class Class_32_Queues
 		 * 
 		 * Note : A Single Queue Operation Takes O(1) Time.
 		 */
+		Queue<Integer> que = new LinkedList<>();
+		que.add(10);
+		que.add(20);
+		que.add(30);
+		System.out.println(que.poll());
+		System.out.println(que.peek());
+		System.out.println(que.size());
+		System.out.println(que+" Queue ");
 		
 		/* Implement Queue using Stacks
 		 * 
