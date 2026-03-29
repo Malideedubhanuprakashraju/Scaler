@@ -17,8 +17,8 @@ public class Class_44_Linked_List_2
 
 	public static void main(String[] args) 
 	{
-		/* Revision 
-		 * -------
+		/* Revision Linked List
+		 * --------------------
 		 * 
 		 * 1) Advantage of Linked List : It has better Space Optimization
 		 * 
