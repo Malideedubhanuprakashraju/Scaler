@@ -168,7 +168,7 @@ public class Class_44_Linked_List_2
 		   👉 **With Dummy:** No special handling is needed; the code is simpler and safer.
 		 */
 		
-		// Given Head Node of Linked List, Sort & Return Head Node of Linked List.
+		// Q3) Given Head Node of Linked List, Sort & Return Head Node of Linked List.
 		/*
 		 * Eg-1 :
 		 * 
@@ -201,6 +201,124 @@ public class Class_44_Linked_List_2
 		   Total Levels : N → N/2 → N/4 → ... → log N levels
 		   So => O(N × log N)
 		 */
+		
+		/* Q4) Given a Head Node of LinkedList, check for Cycle Detection ?
+		 * 
+		 * Note : When Last Node Points to any Previous Node, That's when cycle is formed.
+		 * 
+		 * Note : If No Cycle return NULL
+		 * 
+		 * Note : Return Start Node of Cycle after removing Cycle => last.next = null
+		 * 
+		 * Hint : S : 1-Step 	F : 2-Step
+		 * 
+		 * 		 After each step, distance between f & s pointer will reduced by 1, It Becomes == 0 {Mean to say f/s}
+		 * 
+		 * Observation : In a Circle S & F will have to Meet
+		 * 
+		 * Observation : If Cycle exists in LinkedList, gaurantee Slow & Fast will Meet.
+		 * 
+		 * Observation : That is Intersection Point
+		 * 
+		 * Step-1 : Node S=h, F=h;
+		 * 
+		 * 			s=s.next; f=f.next.next;
+		 * 
+		 * 			if(s==f)
+		 * 			{
+		 * 				Cycle Exists
+		 * 			}
+		 * 			
+		 * 			if( f==null && f.next==null)
+		 * 			{
+		 * 				No Cycle
+		 * 			}
+		 * 
+		 * Step-2 : Node s1=h, s2=Intersection;
+		 * 
+		 * 			Update both s1 & s2 till they are equal.
+		 * 
+		 * 			if(s1==s2)
+		 * 			{
+		 * 				we will get Start of Cycle
+		 * 			}
+		 * 
+		 * Step-3 : In a Cycle
+		 * 
+		 * 			a) Last Node next will point to Start of Cycle
+		 * 
+		 * 			b) Use above info to iterate on cycle to get Last Node of Cycle.
+		 * 
+		 * Step-4 : Detach Cycles => Last.next = null
+		 * 
+		 * 			Return Start of Cycle
+		 *  
+		 */
+		// Creating nodes
+        Node head = new Node(1);
+        Node second = new Node(2);
+        Node third = new Node(3);
+        Node fourth = new Node(4);
+        Node fifth = new Node(5);
+
+        // Linking nodes
+        head.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+
+        // Creating cycle: 5 → 3
+        fifth.next = third;
+		
+        System.out.println();
+		Node ans1=Cycle(head);
+		print(ans1);
+		
+	}
+
+	private static Node Cycle(Node head) // T.C = O(N+N+N) = O(N)
+	{									 // S.C = O(1)
+		boolean flag=false;
+		
+		Node s=head;
+		Node f=head;
+		
+		while(f!=null && f.next!=null)
+		{
+			s=s.next;
+			f=f.next.next;
+			if(s==f)
+			{
+				flag=true;
+				break;
+			}
+		}
+		
+		if(flag==false)
+		{
+			return null;
+		}
+		
+		Node s1=head;
+		Node s2=s;
+		
+		while(s1!=s2)
+		{
+			s1=s1.next;
+			s2=s2.next;
+		}
+		
+		Node start=s1; // Start of Cycle
+		Node last=start;
+		
+		while(last.next!=start)
+		{
+			last=last.next;
+		}
+		
+		last.next=null;
+		
+		return start;
 		
 	}
 
