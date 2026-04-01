@@ -228,10 +228,24 @@ public class Class_45_LinkedList_3
         cf.random = cs;   // 4 → 2
 		
         Nodd ans1=Clone(ch);
+        printt(ans1);
+        
+        /*
+         * | Operation           | Time Complexity | Space Complexity |
+		   | ------------------- | --------------- | ---------------- |
+		   | Insert before tail  | O(1)            | O(1)             |
+		   | Delete node         | O(1)            | O(1)             |
+		   | Print               | O(N)            | O(1)             |
+		   | Find mid            | O(N)            | O(1)             |
+		   | Reverse             | O(N)            | O(1)             |
+		   | Palindrome          | O(N)            | O(1)             |
+		   | Clone (with random) | O(N)            | O(1)             |
+
+         */
 	}
 
-	private static Nodd Clone(Nodd ch) 
-	{
+	private static Nodd Clone(Nodd ch) // T.C = O(N)
+	{								   // S.C = O(1)
 		// To Create Nodes
 		
 		Nodd t=ch;
@@ -250,9 +264,31 @@ public class Class_45_LinkedList_3
 		{
 			if(t.random!=null)
 			{
-				//t.next.random=t
+				t.next.random=t.random.next;
 			}
+			t=t.next.next;
 		}
+		
+		// To Copy Next Links & Return Clone Head
+		
+		Nodd t1=ch;
+		Nodd t2=ch.next;
+		
+		Nodd CH=t2;
+		
+		while(t1!=null)
+		{
+			t1.next=t2.next;
+			t1=t1.next;
+			
+			if(t1!=null)
+			{
+				t2.next=t1.next;
+			}
+			t2=t2.next;
+		}
+		
+		return CH;
 	}
 
 	private static boolean Palindrome(node h) // T.C = O(N+N+N)= O(N)
@@ -348,6 +384,16 @@ public class Class_45_LinkedList_3
 	private static void print(node head) 
 	{
 		node t=head;
+		
+		while(t!=null)
+		{
+			System.out.print(t.data+" ");
+			t=t.next;
+		}
+	}
+	private static void printt(Nodd head) 
+	{
+		Nodd t=head;
 		
 		while(t!=null)
 		{
