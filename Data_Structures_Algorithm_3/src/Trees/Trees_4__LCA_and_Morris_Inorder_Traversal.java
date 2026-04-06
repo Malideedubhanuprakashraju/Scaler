@@ -20,7 +20,7 @@ public class Trees_4__LCA_and_Morris_Inorder_Traversal
 	{
 		// In-Order Traversal --> S.C = O(1)
 		/*
-		 * Q1) Can we Applay Recursion ?
+		 * Q1) Can we Applay Recursion ? Yes
 		 * 
 		 * 	No
 		 * 
