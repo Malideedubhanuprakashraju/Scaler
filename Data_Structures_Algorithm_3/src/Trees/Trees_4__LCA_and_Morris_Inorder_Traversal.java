@@ -2,7 +2,7 @@ package Trees;
 
 import java.util.ArrayList;
 
-class Node 
+class Node //Class
 {
     int data;
     Node left, right;
