@@ -163,7 +163,7 @@ public class Trees_4__LCA_and_Morris_Inorder_Traversal
          */
         
         
-        int k=3;
+        int k=4;
         ar.clear();
         inOrder1(rootNode);
         System.out.println("K^th Smallest: "+ar.get(k-1));
@@ -175,28 +175,75 @@ public class Trees_4__LCA_and_Morris_Inorder_Traversal
 			| LCA (Binary Tree)        | O(N)            | O(H)             |
 			| LCA (BST)                | O(H)            | O(1)             |
 			| Kth Smallest (ArrayList) | O(N)            | O(N)             |
-
+			
+			Morris Inorder Traversal:
+			4 2 5 1 6 3 7
+			
+			LCA (Binary Tree): 2
+			LCA (BST): 3
+			Kth Smallest (Array): 4
+			Kth Smallest (Morris): 5
          */
         ar.clear();
-        MorriesInorder(rootNode);
+        int ans=MorriesInorder(rootNode,4);
+        System.out.println("Kth Smallest (Morris): " + ans);
 	}
 	
 	 
 
 
 
-	private static void MorriesInorder(Node rootNode) 
-	{
-		// TODO Auto-generated method stub
+	private static int MorriesInorder(Node rootNode, int k) // T.C = O(N)
+	{														// S.C = O(1)
+		Node curr=rootNode;
+		int c=0;
 		
+		while(curr!=null)
+		{
+			if(curr.left==null)
+			{
+				c++;
+				if(c==k)
+				{
+					return curr.data;
+				}
+				curr=curr.right;
+			}
+			else
+			{
+				Node temp=curr.left;
+				
+				while(temp.right!=null && temp.right!=curr)
+				{
+					temp=temp.right;
+				}
+				
+				if(temp.right==null)
+				{
+					temp.right=curr;
+					curr=curr.left;
+				}
+				else
+				{
+					temp.right=null;
+					c++;
+					if(c==k)
+					{
+						return curr.data;
+					}
+					curr=curr.right;
+				}
+			}
+		}
+		return 0;
 	}
 
 
 
 
 
-	private static void inOrder1(Node rootNode) 
-	{ 
+	private static void inOrder1(Node rootNode) // T.C = O(N)
+	{ 											// S.C = O(N)
 		if(rootNode==null)
 		{
 			return;
