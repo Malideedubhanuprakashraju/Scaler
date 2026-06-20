@@ -2,11 +2,11 @@ package Graphs;
 
 public class pair 
 { 
-	int i,j;
+	int n,w;
 	pair(int a,int b)
 	{
-		i=a;
-		j=b;
+		n=a;
+		w=b;
 	}
 
 }
