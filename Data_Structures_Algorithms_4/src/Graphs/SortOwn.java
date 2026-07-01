@@ -8,7 +8,7 @@ public class SortOwn implements Comparator<pair>
 	@Override
 	public int compare(pair o1, pair o2) 
 	{
-		 if(o1.w<o2.w)
+		 if(o1.i<o2.i)
 		 {
 			return -1;
 		 }

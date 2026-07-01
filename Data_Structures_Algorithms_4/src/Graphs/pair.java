@@ -1,12 +1,13 @@
 package Graphs;
 
-public class pair 
-{ 
-	int n,w;
-	pair(int a,int b)
-	{
-		n=a;
-		w=b;
-	}
+public class pair
+{
+    int i;
+    int j;
 
+    pair(int i, int j)
+    {
+        this.i = i;
+        this.j = j;
+    }
 }

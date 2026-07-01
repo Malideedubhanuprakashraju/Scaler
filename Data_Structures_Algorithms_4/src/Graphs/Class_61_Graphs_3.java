@@ -549,9 +549,9 @@ public class Class_61_Graphs_3
 		{
 			pair p=pq.poll();
 			
-			int current=p.n;
+			int current=p.i;
 			
-			if(p.w>dist[current])// "If this queue entry is not the best known distance anymore, ignore it."
+			if(p.i>dist[current])// "If this queue entry is not the best known distance anymore, ignore it."
 			{
 				continue;// This single line prevents processing the same node repeatedly with worse distances and keeps Dijkstra efficient.
 			}
@@ -560,7 +560,7 @@ public class Class_61_Graphs_3
 			{
 				pair t=g.get(current).get(i);
 				
-				int Neighbour=t.n,edgeweight=t.w;
+				int Neighbour=t.i,edgeweight=t.i;
 				
 				if(dist[current]+edgeweight<dist[Neighbour])
 				{
