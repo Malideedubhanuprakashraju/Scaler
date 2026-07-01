@@ -308,19 +308,19 @@ public class Class_62_Graphs_4
 		
 		mat[i][j]=0;
 		
-		// Up
+		// Up Side
 		
 		dfs(mat,i-1,j,r,c);
 		
-		// Down
+		// Down Side 
 		
 		dfs(mat,i+1,j,r,c);
 		
-		// Left
+		// Left Side
 		
 		dfs(mat,i,j-1,r,c);
 		
-		// Right
+		// Right Side
 		
 		dfs(mat,i,j+1,r,c);
 		
