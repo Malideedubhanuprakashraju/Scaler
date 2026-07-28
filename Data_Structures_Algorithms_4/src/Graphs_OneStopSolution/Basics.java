@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+ 
+
 public class Basics 
 {
 
@@ -602,7 +604,203 @@ public class Basics
 		 	System.out.print("DFS Traversal : ");
 		 	boolean[] visited=new boolean[Vertices+1];
 		 	DepthFirstSearch(graph,visited,1);
+		 	
+		 	
+		 // Connected Components : Q1. Count the Number of Connected Components using DFS ?
+		 	
+		 /*	Problem :
+		  * 
+		  * Given an undirected graph:
+
+			V = 6
+			
+			Edges:
+			1 - 2
+			2 - 3
+			4 - 5
+			
+			Find the number of connected components.
+		  * 
+		  * 
+		  * Ans :
+		  * 
+		  * Connected Components = 3
+		  * 
+		  */
+		 	
+		 int v=6;
+		 
+		 ArrayList<ArrayList<Integer>> ar=new ArrayList<>();
+		 
+		 for(int i=0;i<=v;i++)
+		 {
+			 ar.add(new ArrayList<>());
+		 }
+		 
+		 ar.get(1).add(2);
+		 ar.get(2).add(1);
+		 
+		 ar.get(2).add(3);
+		 ar.get(3).add(2);
+		 
+		 ar.get(4).add(5);
+		 ar.get(5).add(4);
+		 
+		 boolean b[]=new boolean[v+1];
+		 
+		 int c=0;
+		 
+		 for(int i=1;i<=v;i++)
+		 {
+			 if(!b[i])
+			 {
+				 dfs(i,b,ar);
+				 c++;
+				 
+			 }
+		 }
+		 
+		 System.out.println();
+		 System.out.println("Connected Components Using DFS : "+c);// T.C = O(V + E)
+		 
+		 System.out.println();
+		 
+		 
+		 
+		 for(int i=1;i<=v;i++)
+		 {
+			 if(!b[i])
+			 {
+	
+				 bfs(i,b,ar);
+				 c++;
+				 
+			 }
+		 }
+		 System.out.println();
+		 System.out.println("Connected Components Using BFS : "+c);// T.C = O(V + E)
+		 
+		 System.out.println("Connected Components Printing Using DFS");
+		 
+		 boolean[] visitedPrint = new boolean[v + 1];
+
+	     int component = 1;
+		 
+		 for(int i=1;i<=v;i++)
+		 {
+			 if(!visitedPrint[i])
+			 {
+				 System.out.print("Componet : "+component+" : ");
+				 dfsPrint(i,visitedPrint,ar);
+				 System.out.println();
+				 component++;
+			 }
+		 }
+		 
+		 System.out.println();
+		 System.out.println("Connected Components Printing Using BFS");
+		 
+		 boolean[] vPrint=new boolean[v+1];
+		 
+		 int cmp=1;
+		 
+		 for(int i=1;i<=v;i++)
+		 {
+			 if(!vPrint[i])
+			 {
+				 System.out.print("Component : "+cmp+" : ");
+				 bfsPrint(i,vPrint,ar);
+				 System.out.println();
+				 cmp++;				 
+			 }
+		 }
+		 
+		 
+		 
+		 
 	}
+	
+
+	private static void bfsPrint(int i, boolean[] vPrint, ArrayList<ArrayList<Integer>> ar) 
+	{
+		 Queue<Integer> q=new LinkedList<>();
+		 
+		 q.offer(i);
+		 
+		 vPrint[i]=true;
+		 
+		 while(!q.isEmpty())
+		 {
+			 int current=q.poll();
+			 
+			 System.out.print(current+" ");
+			 for(int x:ar.get(current))
+			 {
+				 if(!vPrint[x])
+				 {
+					 vPrint[x]=true;
+					 q.offer(x);
+				 }
+			 }
+		 }
+	}
+
+
+	private static void dfsPrint(int i, boolean[] b, ArrayList<ArrayList<Integer>> ar) 
+	{
+		 b[i]=true;
+		 
+		 System.out.print(i+" ");
+		 for(int neigh:ar.get(i))
+		 {
+			 if(!b[neigh])
+			 {
+				 dfsPrint(neigh,b,ar);
+			 }
+		 }
+	}
+
+
+	private static void bfs(int i, boolean[] b, ArrayList<ArrayList<Integer>> ar) 
+	{
+		 Queue<Integer> q=new LinkedList<>();
+		 
+		 q.offer(i);
+		 b[i]=true;
+		 
+		 while(!q.isEmpty())
+		 {
+			int current =q.poll();
+			
+			for(int neig:ar.get(current))
+			{
+				if(!b[neig])
+				{
+					b[neig]=true;
+					q.offer(neig);
+				}
+			}
+		 }
+	}
+
+
+	private static void dfs(int i, boolean[] b, ArrayList<ArrayList<Integer>> ar)// T.C , S.C = O(V + E)
+	{ 
+		b[i]=true;
+		
+		for(int neighbour:ar.get(i))
+		{
+			if(!b[neighbour])
+			{
+				dfs(neighbour,b,ar);
+			}
+		}
+	}
+
+
+
+
+
 
 	private static void DepthFirstSearch(ArrayList<ArrayList<Integer>> graph, boolean[] visited, int current) 
 	{
